@@ -1,20 +1,20 @@
 function population (year){
-	var populate = 3.0402*(10**9);
-	var arr = [];
-	var k = 0.016476;
-	if(year < 1960 || year > 2050){
+	var populate = 3.0402*(10**9); //the initial population (@1960);
+	var arr = [];    //array to store the values of the equation to calculate the population based on the year.
+	var k = 0.016476; //a constant to asist the equation
+	if(year < 1960 || year > 2050){  
 		return "We can calculate years from 1960 and up to 2050"
 	}
 	else if(year === undefined || year === 1960){
 		year = 1960;
-		return populate.toLocaleString("en-US");
+		return populate.toLocaleString("en-US");  // A default value
 	} 
 	if(year > 1960){
 		for (var i = 1961 ; i <= 2050 ; i++) { 
-		populate = Math.ceil((3.0402*(10**9)*Math.exp(k*(i-1960))));
-		arr.push(populate);
+		populate = Math.ceil((3.0402*(10**9)*Math.exp(k*(i-1960)))); //Math equation to calculate the population of Year x
+		arr.push(populate); //gathers all the population data per year
 		}
-		return arr[year-1961].toLocaleString("en-US");
+		return arr[year-1961].toLocaleString("en-US");    //returns the population for the year you choose
 	}
 }
 
@@ -22,41 +22,40 @@ function population (year){
 var calButton = $('#btn1');
 $('#result').hide();
 $('#year').hide(); 
+
+
 calButton.click(function(){ // ON CLICK EVENT
 $('#result').hide();
 $('#year').hide();
-var inputYear = $('#year');
+var iYear = $('#year');
 var result = $('#result');
 var input = $('input');
 var inputValue = $('input').val();
-var counter = $('#counter')
-	inputYear.text("")
+	iYear.text("")
+	//==================================================
 	if (population(inputValue) === "We can calculate years from 1960 and up to 2050" ){
-	result.text(population(inputValue));
-	result.animate({
-    left: "+=10",
-    height: "toggle"
-  }, 1000, function() {
-    // Animation complete.
-  });
+		result.text(population(inputValue));
+		result.animate({
+    		left: "+=10",
+    		height: "toggle"
+  			}, 1000);
 	}else{
-	inputYear.text("Year " + inputValue);
-	inputYear.animate({
-    left: "+=10",
-    height: "toggle"
-  }, 1000, function() {
-    // Animation complete.
-  });
-	result.animate({
-    left: "+=10",
-    height: "toggle"
-  }, 1000, function() {
-    // Animation complete.
-  });
-	result.text("World Population = " + population(inputValue));
+		iYear.text("Year " + inputValue);
+		iYear.animate({
+    		left: "+=10",
+    		height: "toggle"
+  			}, 1000);
+		result.animate({
+    		left: "+=10",
+    		height: "toggle"
+  			}, 1000);
+
+		result.text("World Population = " + population(inputValue));
 	}	
 });
 
+
+//Making Enter key work instead of clicking the button; 
 $("#yearInput").keyup(function(event){   
 		if(event.keyCode == 13){
         $("#btn1").click();
@@ -83,4 +82,3 @@ var random1 = Math.floor(Math.random()*2);
 	}, 500);
 })
 
-// }
