@@ -1,0 +1,125 @@
+body {
+	background-image: url("https://wallpapermemory.com/uploads/694/fantasty-world-background-full-hd-1080p-375765.jpg")
+}
+
+#hello {
+color: rgb(255, 255, 255);
+background: rgba(0, 0, 0, 0.4);	
+font-size: 60px;
+border-radius: 15px;
+box-shadow: 1px 20px 80px;
+margin bottom: 50px;
+padding: 15px;
+margin-top: 5px;
+}
+
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.pop {
+	background: rgba(0, 0, 0, 0.7);
+	margin-top: 100px;
+    margin-right: 400px;
+    margin-left: 400px;
+    border-radius: 15px;
+    box-shadow: 1px 40px 80px;
+}
+
+#btn1 {
+	display: inline-block;
+    padding: 5px 15px;
+	font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;	
+    outline: none;
+	margin: 10px;
+	color: silver;
+	background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+	border-radius: 15px;
+    box-shadow: 0 4px #999;
+}
+#btn1:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+#btn1:active {
+  background-color: rgba(0, 0, 0);
+  box-shadow: 0 2px #666 ;
+  transform: translateY(1px);
+}
+
+
+#year {
+	color : rgb(255, 255, 255);
+	margin-top: 25px;
+	animation: bounceIn 2s;
+}
+
+#result {
+	color : rgb(255, 255, 255);
+	margin-bottom: 25px;
+	animation: bounceIn 2s;
+}
+
+input {
+	border-radius: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7)
+}
+
+input:hover {
+background-color: white;
+}
+
+
+
+#counter {
+	font-size: 100px;
+	margin-top: 50px;
+}
+
+
+.stat-count {
+font-size: 100px;
+font-weight: normal;
+letter-spacing: -0.02em;
+line-height: 1.2;
+color: white;
+margin-bottom: 20px;
+overflow:hidden;
+font-family:"Georgia", Courier, monospace;
+padding: 0;
+position: relative;
+}
+
+.stat-detail {
+	color : white;
+}
+
+
+#count2 {
+
+color : rgba(219, 228, 235) ;
+}
+
+
+
+
+
+
+
